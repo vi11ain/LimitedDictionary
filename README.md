@@ -11,6 +11,18 @@ Receives two files as arguments,
 
 Replaces every word with replacement in input file.
 
+#### Vocabulary File
+Should be formatted as such:
+```
+word
+replacement
+word2
+replacement2
+...
+...
+```
+An example can be found in `dict.txt`.
+
 ### Disclaimer
 This program was made purely to polish my C fluency. I tried handling it as safe as I currently know.
 
