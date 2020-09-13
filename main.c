@@ -252,6 +252,17 @@ int main(int argc, char* argv[])
 		}
 	}
 
+	/* Free found_word malloc */
+	free(found_word);
+
+	/* Free dict memory */
+	while (dict != NULL)
+	{
+		dict_pointer = dict->next;
+		free(dict);
+		dict = dict_pointer;
+	}
+
 	/* Close fp_in to open again in w mode (deletes content) */
 	error_code = fclose(fp_in);
 	if (error_code != 0)
@@ -278,6 +289,9 @@ int main(int argc, char* argv[])
 		printf("Could not close %s\n", argv[1]);
 		return CANNOT_CLOSE_INPUT_FILE;
 	}
+
+	/* Free inp_buffer */
+	free(inp_buffer);
 
 	return 0;
 }
